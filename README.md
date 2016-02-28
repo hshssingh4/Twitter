@@ -25,7 +25,8 @@ The following **additional** features are implemented:
 - [x] Image media files that are posted as part of the tweet (if any) are also shown along with text to enhance user experience!
 - [x] If an image is a retweet, the name of the retweeter appears on the top and the data of the actual tweet appears in the body as in the actual Twitter app.
 - [x] UIAlertController used to display and handle events related to logout, retweet, and unretweet.
-- [x] App Icons and Animations added to make the look and feel of **Twitter** more desirable.
+- [x] Animations and Gradient Colors added to make the look and feel of **Twitter** more desirable.
+- [x] App Icons and Launch Screen images added to enhance user's initial interaction with the app.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
