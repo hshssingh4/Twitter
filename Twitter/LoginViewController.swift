@@ -8,6 +8,7 @@
 
 import UIKit
 import BDBOAuth1Manager
+import ChameleonFramework
 
 class LoginViewController: UIViewController
 {
@@ -15,6 +16,8 @@ class LoginViewController: UIViewController
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var twitterLogoImageView: UIImageView!
+    let color1 = UIColor(hexString: "#33ff66", withAlpha: 0.9)
+    let color2 = UIColor(hexString: "#55acee")
 
     override func viewDidLoad()
     {
@@ -22,6 +25,13 @@ class LoginViewController: UIViewController
         messageLabel.text = "Get real-time updates about what matters to you."
         loginButton.layer.cornerRadius = 5.0
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        let backgroundColor = GradientColor(UIGradientStyle.TopToBottom, frame: self.view.frame, colors: [color1, color2])
+        self.view.backgroundColor = backgroundColor
+        let originaCenter = self.twitterLogoImageView.center
+        self.twitterLogoImageView.center = self.view.center
+        UIView.animateWithDuration(1.0) { () -> Void in
+            self.twitterLogoImageView.center = originaCenter
+        }
     }
 
     override func didReceiveMemoryWarning()
