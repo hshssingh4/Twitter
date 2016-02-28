@@ -11,12 +11,17 @@ import BDBOAuth1Manager
 
 class LoginViewController: UIViewController
 {
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var twitterLogoImageView: UIImageView!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        messageLabel.text = "Get real-time updates about what matters to you."
+        loginButton.layer.cornerRadius = 5.0
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     }
 
     override func didReceiveMemoryWarning()
@@ -27,22 +32,20 @@ class LoginViewController: UIViewController
     
     @IBAction func onLoginButtonTap(sender: AnyObject)
     {
-        let twitterClient = BDBOAuth1SessionManager(baseURL: NSURL(string: "https://api.twitter.com"), consumerKey: "SCeolPojrMhawPxVnTi7ZArtO", consumerSecret: "ejiIMTy9qGQIW4GL0IPoNHhHsL1pJ761Q7ViImQVlpaeX75GBN")
-        
-        twitterClient.deauthorize()
-        twitterClient.fetchRequestTokenWithPath("oauth/request_token", method: "GET", callbackURL: NSURL(string: "harpreetTwitterApp://oauth"), scope: nil, success: {
-            (requestToken: BDBOAuth1Credential!) -> Void in
-            
-            print("I got a token.")
-            
-            let url = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")
-            UIApplication.sharedApplication().openURL(url!)
-            
-            })
-            {
-                (error: NSError!) -> Void in
-                print("error \(error.localizedDescription)")
-        }
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            self.messageLabel.hidden = true
+            self.welcomeLabel.hidden = true
+            self.loginButton.hidden = true
+            self.twitterLogoImageView.center.y = self.view.center.y
+            }, completion: { finished in
+                TwitterClient.sharedInstance.login({ () -> () in
+                    
+                    self.performSegueWithIdentifier("loginSegue", sender: nil)
+                    
+                    }) { (error: NSError) -> () in
+                        print("Error: \(error.localizedDescription)")
+                }
+        })
     }
 
     /*
