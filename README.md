@@ -1,4 +1,4 @@
-# Project 4 - *Twitter Part 1*
+# Project 4 - *Twitter Part I*
 
 **Twitter Part 1** is a basic twitter app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
@@ -61,24 +61,24 @@ Getting used to the Twitter API was a bit tough at first but hours spend to get 
     See the License for the specific language governing permissions and
     limitations under the License.
     
-# Project 5 - *Name of App Here*
+# Project 5 - *Twitter Part II*
 
-Time spent: **X** hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
-- [ ] Profile page:
-   - [ ] Contains the user header view
-   - [ ] Contains a section with the users basic stats: # tweets, # following, # followers
-- [ ] Home Timeline: Tapping on a user image should bring up that user's profile page
-- [ ] Compose Page: User can compose a new tweet by tapping on a compose button.
+- [x] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
+- [x] Profile page:
+   - [x] Contains the user header view
+   - [x] Contains a section with the users basic stats: # tweets, # following, # followers
+- [x] Home Timeline: Tapping on a user image should bring up that user's profile page
+- [x] Compose Page: User can compose a new tweet by tapping on a compose button.
 
 The following **optional** features are implemented:
 
-- [ ] When composing, you should have a countdown in the upper right for the tweet limit.
+- [x] When composing, you should have a countdown in the upper right for the tweet limit.
 - [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
 - [ ] Profile Page
    - [ ] Implement the paging view for the user description.
@@ -92,12 +92,12 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Countdown text appears in green when more than 15 characters are left for tweet. Otherwise, it appears in red to denote that user is about to or has already ran out of the character count available to tweet.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Auto Layout.
+2. Paging view.
 
 ## Video Walkthrough 
 
@@ -113,7 +113,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2016] [Harpreet Singh]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
