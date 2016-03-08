@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "16LikeActionIcon.png",
+      "filename" : "25LikeActionOffIcon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "16LikeActionIcon-1.png",
+      "filename" : "25LikeActionOffIcon-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "16LikeActionIcon-2.png",
+      "filename" : "25LikeActionOffIcon-2.png",
       "scale" : "3x"
     }
   ],

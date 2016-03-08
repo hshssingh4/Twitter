@@ -10,6 +10,7 @@ import UIKit
 
 class Tweet: NSObject
 {
+    var tweeter: NSDictionary?
     var tweetersName: String?
     var tweetersScreenname: String?
     var tweetersImageUrl: NSURL?
@@ -40,6 +41,7 @@ class Tweet: NSObject
         favorited = dictionary["favorited"] as? Bool
         
         let user = dictionary["user"] as! NSDictionary
+        tweeter = user
         tweetersName = user["name"] as? String
         tweetersScreenname = "@\((user["screen_name"] as? String)!)"
         if let profileImageUrl = user["profile_image_url"] as? String

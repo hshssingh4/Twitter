@@ -255,14 +255,19 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.mediaImageView.layer.cornerRadius = 5.0
         return cell
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if let cell = sender as? UITableViewCell
+        {
+            let indexPath = tableView.indexPathForCell(cell)
+            let selectedTweet = tweets[indexPath!.row]
+            let tweetDetailsViewController = segue.destinationViewController as! TweetDetailsViewController
+            tweetDetailsViewController.tweet = selectedTweet
+            tweetDetailsViewController.tweeter = selectedTweet.tweeter
+        }
     }
-    */
-
 }
