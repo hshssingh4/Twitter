@@ -137,6 +137,20 @@ class TwitterClient: BDBOAuth1SessionManager
         }
     }
     
+    func deleteTweet(id: Int, success: (Tweet) -> (), failure: (NSError) -> ())
+    {
+        var parameters: [String : AnyObject]
+        parameters = ["id": id]
+        
+        POST("1.1/statuses/destroy.json", parameters: parameters, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            let dictionary = response as! NSDictionary
+            let tweet = Tweet.getTweet(dictionary)
+            success(tweet)
+            }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure(error)
+        }
+    }
+    
     func login(success: () -> (), failure: (NSError) -> ())
     {
         loginSuccess = success

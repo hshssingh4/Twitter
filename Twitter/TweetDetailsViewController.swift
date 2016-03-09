@@ -11,7 +11,7 @@ import UIKit
 class TweetDetailsViewController: UIViewController
 {
     var tweet: Tweet!
-    var tweeter: NSDictionary!
+    var user: User!
     
     @IBOutlet weak var retweetersNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -89,11 +89,6 @@ class TweetDetailsViewController: UIViewController
     {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func onReplyButton(sender: AnyObject)
-    {
-        
-    }
     
     @IBAction func onRetweetButton(sender: AnyObject)
     {
@@ -170,7 +165,10 @@ class TweetDetailsViewController: UIViewController
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        let userProfileViewController = segue.destinationViewController as! UserProfileViewController
-        userProfileViewController.tweeter = self.tweeter
+        if sender!.isKindOfClass(UIImageView)
+        {
+            let userProfileViewController = segue.destinationViewController as! UserProfileViewController
+            userProfileViewController.user = self.user
+        }
     }
 }

@@ -256,6 +256,36 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    // Deletion methods
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        let tweet = tweets[indexPath.row]
+        if tweet.user?.name == User.currentUser?.name
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if (editingStyle == UITableViewCellEditingStyle.Delete)
+        {
+            let tweet = tweets[indexPath.row]
+            let id = tweet.id
+           
+            TwitterClient.sharedInstance.deleteTweet(id!, success: { (favoritedTweet: Tweet) -> () in
+                self.tweets.removeAtIndex(indexPath.row)
+                self.tableView.reloadData()
+                }) { (error: NSError) -> () in
+                    print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -267,7 +297,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let selectedTweet = tweets[indexPath!.row]
             let tweetDetailsViewController = segue.destinationViewController as! TweetDetailsViewController
             tweetDetailsViewController.tweet = selectedTweet
-            tweetDetailsViewController.tweeter = selectedTweet.tweeter
+            tweetDetailsViewController.user = selectedTweet.user
+        }
+        else if sender?.image() == UIImage(named: "HomeIcon")
+        {
+            let userProfileViewController = segue.destinationViewController as! UserProfileViewController
+            userProfileViewController.user = User.currentUser
         }
     }
 }

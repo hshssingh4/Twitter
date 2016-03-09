@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -131,7 +132,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYt-fS-HFO">
                                 <rect key="frame" x="43" y="316" width="41" height="16"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13o-SC-oWo">
@@ -143,13 +144,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg5-1i-XWE">
                                 <rect key="frame" x="131" y="316" width="56" height="16"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcc-KQ-Bkh">
                                 <rect key="frame" x="235" y="316" width="56" height="16"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsL-Oc-5t3">
@@ -167,6 +168,7 @@
                             <constraint firstItem="nkc-le-KL5" firstAttribute="top" secondItem="oV3-8L-pv1" secondAttribute="bottom" constant="23" id="84T-Qt-gwq"/>
                             <constraint firstItem="Dcc-KQ-Bkh" firstAttribute="leading" secondItem="KsL-Oc-5t3" secondAttribute="trailing" constant="8" id="DNR-YM-Ew6"/>
                             <constraint firstItem="aYt-fS-HFO" firstAttribute="top" secondItem="oV3-8L-pv1" secondAttribute="bottom" constant="23" id="GSZ-6z-Mdn"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dcc-KQ-Bkh" secondAttribute="trailing" constant="10" id="J8q-Ig-chf"/>
                             <constraint firstItem="dtS-lc-ils" firstAttribute="top" secondItem="wFD-AG-kuV" secondAttribute="bottom" constant="128" id="JcQ-uf-Rks"/>
                             <constraint firstItem="cyH-fr-1DS" firstAttribute="leading" secondItem="Wq7-b2-i4Q" secondAttribute="leading" id="KxO-pV-WVb"/>
                             <constraint firstItem="fg5-1i-XWE" firstAttribute="centerY" secondItem="nkc-le-KL5" secondAttribute="centerY" id="OjK-2F-xlO"/>
@@ -178,8 +180,8 @@
                             <constraint firstItem="13o-SC-oWo" firstAttribute="leading" secondItem="aYt-fS-HFO" secondAttribute="trailing" constant="24" id="guq-wV-lAN"/>
                             <constraint firstItem="aYt-fS-HFO" firstAttribute="leading" secondItem="nkc-le-KL5" secondAttribute="trailing" constant="8" id="j1h-E3-00Z"/>
                             <constraint firstItem="dtS-lc-ils" firstAttribute="leading" secondItem="Wq7-b2-i4Q" secondAttribute="leading" constant="20" id="lsB-mJ-STa"/>
-                            <constraint firstItem="Dcc-KQ-Bkh" firstAttribute="centerY" secondItem="nkc-le-KL5" secondAttribute="centerY" id="n6u-Ik-1el"/>
                             <constraint firstItem="nkc-le-KL5" firstAttribute="leading" secondItem="Wq7-b2-i4Q" secondAttribute="leading" constant="20" id="qP2-iz-3lD"/>
+                            <constraint firstItem="Dcc-KQ-Bkh" firstAttribute="top" secondItem="cyH-fr-1DS" secondAttribute="bottom" constant="98" id="qUF-L7-CSZ"/>
                             <constraint firstItem="cyH-fr-1DS" firstAttribute="top" secondItem="wFD-AG-kuV" secondAttribute="bottom" id="tGY-rJ-XDK"/>
                             <constraint firstItem="13o-SC-oWo" firstAttribute="centerY" secondItem="nkc-le-KL5" secondAttribute="centerY" id="vsL-Sc-0An"/>
                             <constraint firstItem="oV3-8L-pv1" firstAttribute="leading" secondItem="Wq7-b2-i4Q" secondAttribute="leading" constant="20" id="yJ8-0w-S3S"/>
@@ -411,11 +413,18 @@
                                 <action selector="onLogoutButton:" destination="oel-AB-8WH" id="0Z7-L5-dSr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ComposeIcon" id="X8W-9G-tYh">
-                            <connections>
-                                <segue destination="N5Y-zE-HFt" kind="modal" id="gzX-QV-Yrh"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ComposeIcon" id="X8W-9G-tYh">
+                                <connections>
+                                    <segue destination="N5Y-zE-HFt" kind="modal" id="gzX-QV-Yrh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="HomeIcon" id="mDL-8Z-GEO">
+                                <connections>
+                                    <segue destination="7sv-MY-xAj" kind="push" id="c2u-0a-p1M"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -552,7 +561,6 @@
                                         </constraints>
                                         <state key="normal" image="ReplyActionIcon"/>
                                         <connections>
-                                            <action selector="onReplyButton:" destination="Lr9-CU-ya5" eventType="touchUpInside" id="pWH-JJ-cXI"/>
                                             <segue destination="N5Y-zE-HFt" kind="modal" id="Ei0-B1-PZh"/>
                                         </connections>
                                     </button>
@@ -769,11 +777,13 @@
         <image name="ComposeIcon" width="22" height="22"/>
         <image name="ExitIcon" width="22" height="22"/>
         <image name="FavoriteActionOffIcon" width="25" height="33"/>
+        <image name="HomeIcon" width="22" height="22"/>
         <image name="ReplyActionIcon" width="25" height="28"/>
         <image name="RetweetActionOffIcon" width="25" height="24"/>
         <image name="TwitterLogoWhite" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ei0-B1-PZh"/>
+        <segue reference="iGC-lD-kgM"/>
     </inferredMetricsTieBreakers>
 </document>

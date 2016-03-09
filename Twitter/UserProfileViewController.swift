@@ -10,7 +10,7 @@ import UIKit
 
 class UserProfileViewController: UIViewController
 {
-    var tweeter: NSDictionary!
+    var user: User!
 
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var userImageView: UIImageView!
@@ -28,27 +28,25 @@ class UserProfileViewController: UIViewController
     
     func initUser()
     {
-        usernameLabel.text = tweeter["name"] as? String
-        screennameLabel.text = "@\(tweeter["screen_name"] as! String)"
-        if let profileImageUrl = tweeter["profile_image_url"] as? String
+        usernameLabel.text = user.name!
+        screennameLabel.text = "@\(user.screenname!)"
+        if let profileImageUrl = user.profileUrl
         {
-            let tweetersImageUrl = NSURL(string: profileImageUrl)
-            userImageView.setImageWithURL(tweetersImageUrl!)
+            userImageView.setImageWithURL(profileImageUrl)
         }
-        if let profileBackgroundImageUrl = tweeter["profile_background_image_url"] as? String
+        if let profileBackgroundImageUrl = user.headerImageUrl
         {
-            let tweeterBackgroundImageUrl = NSURL(string: profileBackgroundImageUrl)
-            headerImageView.setImageWithURL(tweeterBackgroundImageUrl!)
+            headerImageView.setImageWithURL(profileBackgroundImageUrl)
         }
-        tweetsCountLabel.text = "\(tweeter["statuses_count"] as! Int)"
-        followersCountLabel.text = "\(tweeter["followers_count"] as! Int)"
-        followingCountLabel.text = "\(tweeter["friends_count"] as! Int)"
+        print(user.headerImageUrl)
+        tweetsCountLabel.text = "\(user.statusesCount!)"
+        followersCountLabel.text = "\(user.followersCount!)"
+        followingCountLabel.text = "\(user.friendsCount!)"
     }
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
