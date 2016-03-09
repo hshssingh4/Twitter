@@ -92,6 +92,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
+- [x] User is provided with the ability to delete a tweet in case they want to.
 - [x] Countdown text appears in green when more than 15 characters are left for tweet. Otherwise, it appears in red to denote that user is about to or has already ran out of the character count available to tweet.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
@@ -103,7 +104,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/HEt5aAd.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
