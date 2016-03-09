@@ -110,7 +110,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The challenge was basically to find time to make the app in general. I was so busy during this midterm week which is why I coulnt' finish all the optionals. So I apologize for not submitting the type of app that I ussually do! I will definitely add those very soon though even though they might not reviewed again for a regrade!
 
 ## License
 
